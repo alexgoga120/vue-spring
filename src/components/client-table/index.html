@@ -1,0 +1,29 @@
+<v-card>
+    <v-card-title class="bg-blue-grey-darken-2">Clientes</v-card-title>
+    <v-card-text>
+        <p class="text-h6">Listado de clientes</p>
+        <v-table
+                fixed-header>
+            <thead>
+            <tr>
+                <th v-for="(label, i) in labels" :key="i"
+                    class="text-left font-weight-bold">
+                    {{ label }}
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr
+                    v-for="item in clientsAxios"
+                    :key="item.id"
+            >
+                <td>{{ item.id }}</td>
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.apellido }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.createAt }}</td>
+            </tr>
+            </tbody>
+        </v-table>
+    </v-card-text>
+</v-card>
